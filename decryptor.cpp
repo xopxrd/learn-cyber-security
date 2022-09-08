@@ -35,33 +35,27 @@ int main (int argc, char const *argv[]){
                 getline(read13, line13);
                 char cipherText13[int(line13.length())];
                 for(int i = 0; i < int(line13.length()); i++){
-					if(line13[i] == ' '){
-						cipherText13[i] = line13[i];
-					}
-					if(line13[i] != ' '){
-						cipherText13[i] = line13[i];
-					}
-					for(int j = 0; j < character_13; j++){
-						if(line13[i] == firstAlphabet[j]){
-							cipherText13[i] = lastAlphabet[j];
-						}
-						if(line13[i] == lastAlphabet[j]){
-							cipherText13[i] = firstAlphabet[j];
-						}
-						if(line13[i] == firstCapitalAlphabet[j]){
-							cipherText13[i] = lastCapitalAlphabet[j];
-						}
-						if(line13[i] == lastCapitalAlphabet[j]){
-							cipherText13[i] = firstCapitalAlphabet[j];
-						}
-					}
-				}
-				text13.append(cipherText13);
-            }
+			if(line13[i] == ' ')
+				cipherText13[i] = line13[i];
+			if(line13[i] != ' ')
+				cipherText13[i] = line13[i];	
+			for(int j = 0; j < character_13; j++){
+				if(line13[i] == firstAlphabet[j])
+					cipherText13[i] = lastAlphabet[j];
+				if(line13[i] == lastAlphabet[j])
+					cipherText13[i] = firstAlphabet[j];
+				if(line13[i] == firstCapitalAlphabet[j])
+					cipherText13[i] = lastCapitalAlphabet[j];
+				if(line13[i] == lastCapitalAlphabet[j])
+					cipherText13[i] = firstCapitalAlphabet[j];
+			}
+		}
+		text13.append(cipherText13);
+        }
         read13.close();
 		
-		/* make a decyption file
-		   you can uncomment this file if you want to make the .txt file
+	/* make a decyption file
+	you can uncomment this file if you want to make the .txt file
         std::ofstream decryptFile13("decrypt13" + file + ".txt");
         decryptFile13 << text13;
         decryptFile13.close();
@@ -69,44 +63,39 @@ int main (int argc, char const *argv[]){
         
         std::cout << text13;
     }
-        break;
+    break;
+    
     case 2:
     {
-		std::string line18;
-		std::string text18;
+	std::string line18;
+	std::string text18;
         std::ifstream read18;
         read18.open(file + ".txt");
             while (!read18.eof()){
                 getline(read18, line18);
                 char cipherText18[int(line18.length())];
-				for(int i = 0; i < int(line18.length()); i++){
-					if(line18[i] == ' '){
-						cipherText18[i] = line18[i];
-					}
-					if(line18[i] != ' '){
-						cipherText18[i] = line18[i];
-					}
-					for(int j = 0; j < character_18; j++){
-						if(line18[i] == character_1[j]){
-							cipherText18[i] = character_2[j];
-						}
-						if(line18[i] == character_2[j]){
-							cipherText18[i] = character_1[j];
-						}
-						if(line18[i] == character_3[j]){
-							cipherText18[i] = character_4[j];
-						}
-						if(line18[i] == character_4[j]){
-							cipherText18[i] = character_3[j];
-						}
-					}
-				}
-				text18.append(cipherText18);
+		for(int i = 0; i < int(line18.length()); i++){
+			if(line18[i] == ' ')
+				cipherText18[i] = line18[i];
+			if(line18[i] != ' ')
+				cipherText18[i] = line18[i];
+			for(int j = 0; j < character_18; j++){
+				if(line18[i] == character_1[j])
+					cipherText18[i] = character_2[j];
+				if(line18[i] == character_2[j])
+					cipherText18[i] = character_1[j];
+				if(line18[i] == character_3[j])
+					cipherText18[i] = character_4[j];
+				if(line18[i] == character_4[j])
+					cipherText18[i] = character_3[j];
 			}
-		read18.close();
+		}
+		text18.append(cipherText18);
+	}
+	read18.close();
 
-		/* make a decyption file
-		   you can uncomment this file if you want to make the .txt file
+	/* make a decyption file
+	you can uncomment this file if you want to make the .txt file
         std::ofstream decryptFile18("decrypt18" + file + ".txt");
         decryptFile18 << text18;
         decryptFile18.close();
@@ -115,7 +104,8 @@ int main (int argc, char const *argv[]){
         std::cout << text18;
 	}
         break;
-    default:
+
+    	default:
         break;
     }
 
